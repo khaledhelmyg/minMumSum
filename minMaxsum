@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    sumition=sum(arr)
+    minmum=sumition
+    maxmum=0
+    
+    for i in arr:
+        executed_sum=sumition-i
+        if maxmum<executed_sum:
+            maxmum=executed_sum
+        if minmum > executed_sum:
+            min =executed_sum
+    print(minmum,maxmum)       
+        
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
