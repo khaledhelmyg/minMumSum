@@ -1,0 +1,59 @@
+#solotion to superDiget HackerRanke solotion
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the superDigit function below.
+def superDigit(n, k):
+    summ=0
+    resulte=[]
+    resulte2=[]
+    re=0
+    for i in n :
+       summ=summ+int(i)
+    summ=summ*k   
+    print(summ)   
+    if summ>10:
+        summ=[str(summ)]
+        print(summ)
+        for i in summ:
+            print (summ,"this")
+            for x in i:
+                resulte.append(int(x))
+                print(resulte)
+            summ=sum(resulte)
+            if summ >10:
+                summ=[str(summ)]
+                for i in summ:
+                    for x in i:
+                        resulte2.append(int(x))
+                        print(resulte2)
+                        summ=sum(resulte2)
+                return summ
+            else:
+                return summ
+    else:
+        print(summ,"s")
+        return summ
+                              
+    print (summ)        
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = nk[0]
+
+    k = int(nk[1])
+
+    result = superDigit(n, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
